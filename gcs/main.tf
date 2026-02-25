@@ -1,5 +1,5 @@
 provider "google" {
-  project = "weighty-purpose-472118-p2"
+  project = ""
   region  = "us-central1"
 }
 
@@ -14,6 +14,8 @@ resource "google_storage_bucket" "tf_state_bucket" {
   name     = "my-tf-state-bucket-1234534533534vvev"
   location = "US"
   
+  storage_class = "STANDARD" // STANDARD, NEARLINE, ARCHIVE, COLDLINE
+
   versioning {
     enabled = true
   }
