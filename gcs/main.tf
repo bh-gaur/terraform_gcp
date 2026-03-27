@@ -1,5 +1,14 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "7.25.0"
+    }
+  }
+}
+
 provider "google" {
-  project = ""
+  project = "" # TODO: Replace with your GCP project ID
   region  = "us-central1"
 }
 

@@ -1,7 +1,17 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "7.25.0"
+    }
+  }
+}
+
 provider "google" {
-  project = ""
+  project = "" # TODO: Replace with your GCP project ID
   region  = "us-central1"
 }
+
 terraform {
   backend "gcs" {
     bucket = "my-tf-state-bucket-1234534533534vvev"
