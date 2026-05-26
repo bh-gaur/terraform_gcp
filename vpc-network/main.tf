@@ -47,6 +47,14 @@ resource "google_compute_subnetwork" "subnet2" {
   network       = google_compute_network.vpc_network.id
 }
 
+resource "google_compute_subnetwork" "subnet3" {
+  name          = "my-subnet3"
+  ip_cidr_range = "10.0.3.0/24"
+  region        = "asia-south1"
+  
+  network = google_compute_network.vpc_network.id
+}
+
 resource "google_compute_firewall" "allow_ssh" {
   name    = "allow-ssh"
   network = google_compute_network.vpc_network.name
